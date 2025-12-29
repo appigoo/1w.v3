@@ -1,7 +1,7 @@
 streamlit
 pandas
 plotly
+yfinance ==0.2.66
 numpy
 dotenv
 requests
-yfinance ==0.2.66
