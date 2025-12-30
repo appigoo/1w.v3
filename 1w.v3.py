@@ -542,7 +542,7 @@ while True:
         for ticker in selected_tickers:
             try:
                 stock = yf.Ticker(ticker)
-                data = stock.history(period=selected_period, interval=selected_interval).reset_index()
+                data = stock.history(period=selected_period, interval=selected_interval,auto_adjust=False,progress=False,threads=False).reset_index()
                 time.sleep(3)
 
                 if data.empty or len(data) < 2:
