@@ -637,9 +637,9 @@ while True:
                     if index > 0 and row["Close_N_Low"] >= LOW_N_LOW_THRESHOLD:
                         signals.append("📉 LOW_N_LOW")
                     ###
-                    if index > 0 and row["High"] > data['High_Roll_Max'].shift(1):
+                    if index > 0 and row["High"] > data['High_Roll_Max'].iloc[index-1]:
                         signals.append("📈 突破5K")
-                    if index > 0 and row["Low"] < data['Low_Roll_Min'].shift(1):
+                    if index > 0 and row["Low"] < data['Low_Roll_Min'].iloc[index-1]:
                         signals.append("📉 跌穿5K")
                     ###
                     if index > 0 and row["MACD"] > 0 and data["MACD"].iloc[index-1] <= 0 and row["RSI"] < 50:
